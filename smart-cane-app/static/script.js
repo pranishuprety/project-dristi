@@ -139,7 +139,34 @@ function getAndSpeakWeather() {
     speak("Nearby: Pharmacy, Bus Stop, Park.");
   }
 
-
+  async function handlePDF(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+  
+    const formData = new FormData();
+    formData.append('file', file);
+  
+    // Step 1: PDF to text
+    const textRes = await fetch('/pdf-to-text', {
+      method: 'POST',
+      body: formData
+    });
+    const { text } = await textRes.json();
+  
+    // Step 2: Text to Speech
+    const audioRes = await fetch('/text-to-speech', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text })
+    });
+  
+    const audioBlob = await audioRes.blob();
+    const audioUrl = URL.createObjectURL(audioBlob);
+    
+    const audio = new Audio(audioUrl);
+    audio.play();
+  }
+  
 
 
 

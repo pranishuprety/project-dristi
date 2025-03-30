@@ -19,21 +19,37 @@
     <img src="{{ url_for('static', filename='hackprinceton.png') }}" alt="Hack Princeton" class="top-banner-image">
     
     <h1 class="main-title">🦯 Project Dristi</h1>
-    <marquee class="quote" scrollamount="6" scrolldelay="10">"Not all heroes have sight, but all have vision."</marquee>
+    <marquee class="quote" scrollamount="6" scrolldelay="10">
+        🌟 "Vision goes beyond sight—navigate your world with confidence." 🌟
+      </marquee>
 
-    <!-- Image Reader -->
-    <button class="feature-card" onclick="document.getElementById('ocrInput').click()">
-      <i class='bx bx-camera'></i>
-      <span>Image Reader</span>
-    </button>
-    <input 
-      type="file" 
-      id="ocrInput" 
-      accept="image/*" 
-      capture="environment" 
-      style="display: none;" 
-      onchange="processImage(event)"
-    >
+<!-- Image Reader -->
+<button class="feature-card" onclick="document.getElementById('ocrInput').click()">
+    📷 Image Reader
+  </button>
+  <input 
+    type="file" 
+    id="ocrInput" 
+    accept="image/*" 
+    capture="environment" 
+    style="display: none;" 
+    onchange="processImage(event)"
+  >
+  
+  <!-- PDF Reader -->
+  <button class="feature-card" onclick="document.getElementById('pdfInput').click()">
+    📄 PDF Reader
+  </button>
+  <input 
+    type="file" 
+    id="pdfInput" 
+    accept=".pdf" 
+    style="display: none;" 
+    onchange="handlePDF(event)"
+  >
+  
+  
+  
 
     <!-- Voice Assistant UI -->
     <section>

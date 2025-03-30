@@ -62,32 +62,33 @@ marquee.quote {
   display: none;
 }
 
-/* Feature Button (Image Reader) */
+/* Feature Button (Image Reader and PDF reader) */
 .feature-card {
-  background-color: transparent;
-  border: 2px solid #ffcc00;
-  color: #ffcc00;
-  padding: 10px 20px;
-  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  margin: 8px;
+  font-size: 16px;
   cursor: pointer;
-  margin: 20px auto;
-  display: inline-block;
   border-radius: 8px;
-  box-shadow: 0 0 8px #ffcc00;
-  transition: all 0.3s ease;
+  border: 2px solid #ffc400;
+  background-color: #000;
+  color: #ffc400;
+  box-shadow: 0 0 10px #ffc400;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 160px;
+  height: 60px; /* Ensures equal height */
 }
 
-.feature-card:hover {
-  background-color: #ffcc00;
-  color: #000;
-  box-shadow: 0 0 20px #ffcc00;
+.feature-card span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
 }
 
-.feature-card i.bx {
-  font-size: 32px;
-  margin-bottom: 8px;
-  color: inherit;
-}
+
 
 /* Camera Icon Style */
 .feature-card i.bx-camera {
