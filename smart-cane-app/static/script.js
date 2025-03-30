@@ -95,6 +95,13 @@ function processImage(event) {
   reader.readAsDataURL(file);
 }
 
+function speakCurrentAddress() {
+  const address = document.getElementById("locationName")?.innerText || "Unknown location";
+  const message = `You are currently at ${address}`;
+  speak(message);
+}
+
+
 // 🎙️ Voice Assistant Integration
 window.onload = function () {
   console.log("🌐 DOM Loaded");
