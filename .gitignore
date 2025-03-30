@@ -1,0 +1,28 @@
+# Ignore virtual environments
+.venv/
+venv/
+**/venv/
+
+# Node.js
+node_modules/
+build/
+dist/
+
+# Python
+__pycache__/
+*.pyc
+.env
+
+# AI/media files
+*.wav
+*.mp4
+*.pt
+*.ckpt
+*.h5
+*.onnx
+
+# OS and editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
