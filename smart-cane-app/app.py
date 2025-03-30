@@ -4,6 +4,7 @@ from transformers import pipeline
 import time
 import random
 import whisper
+import os
 import tempfile
 import fitz  # PyMuPDF for PDF reading
 from gtts import gTTS
@@ -74,5 +75,7 @@ def text_to_speech():
     return send_file(tts_audio, mimetype='audio/mp3', download_name='speech.mp3')
 
 # Run server
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
