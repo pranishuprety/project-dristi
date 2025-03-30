@@ -64,19 +64,20 @@
     </section>
   
 
-    <!-- Conversational Assistant -->
-    <section>
-      <h2>🗣️ Conversational Assistant</h2>
-      <button onclick="speakLocation()">Where am I?</button>
-      <button onclick="speak('Nearby: Pharmacy, Bus Stop, Park')">What’s nearby?</button>
-      <button onclick="speak('Cloudy, 56 degrees Fahrenheit')">How’s the weather?</button>
+    <!-- Conversational Assistant UI -->
+    <section id="assistant">
+        <h2>🗣️ Conversational Assistant</h2>
+        <button onclick="speakCurrentAddress()">Where am I?</button>
+        <button onclick="speakNearbyPlaces()">What’s nearby?</button>
+        <button onclick="getAndSpeakWeather()">How’s the weather?</button>
     </section>
+    
 
     <!-- Hazard Alerts -->
     <section>
       <h2>⚠️ Hazard Alerts</h2>
       <ul>
-        <li>🗣️ "Broken sidewalk on Elm Street"</li>
+        <li>🗣️ "Broken sidewalk on Elm Street"</li> <!--Demo texts-->
         <li>🗣️ "Construction blocking walkway"</li>
       </ul>
       <button onclick="speak('Voice hazard report submitted.')">Submit Hazard Report</button>

@@ -134,6 +134,12 @@ function getAndSpeakWeather() {
     });
 }
 
+  function speakNearbyPlaces() {
+    // Static content, can be updated later
+    speak("Nearby: Pharmacy, Bus Stop, Park.");
+  }
+
+
 
 
 
