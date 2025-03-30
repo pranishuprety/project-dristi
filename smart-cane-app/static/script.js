@@ -101,6 +101,41 @@ function speakCurrentAddress() {
   speak(message);
 }
 
+function getAndSpeakWeather() {
+  const weatherKey = 'f4069f05ecd6ecc881f030d8fa95db21';
+  const { lat, lng } = mapCenter;
+
+  if (!lat || !lng) {
+    speak("Location not available yet.");
+    return;
+  }
+
+  const location = document.getElementById("locationName")?.innerText || "your location";
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${weatherKey}&units=imperial`;
+
+  fetch(url)
+    .then(response => {
+      if (!response.ok) throw new Error(`Weather fetch failed: ${response.status}`);
+      return response.json();
+    })
+    .then(data => {
+      const temp = Math.round(data.main.temp);
+      const condition = data.weather[0].description;
+      const message = `The weather in ${location} is ${condition} and ${temp} degrees Fahrenheit.`;
+
+      const weatherInfo = document.getElementById("weatherInfo");
+      if (weatherInfo) weatherInfo.innerText = message;
+
+      speak(message);
+    })
+    .catch(err => {
+      console.error("Weather fetch error:", err);
+      speak("Sorry, I couldn't get the weather update.");
+    });
+}
+
+
+
 
 // 🎙️ Voice Assistant Integration
 window.onload = function () {
