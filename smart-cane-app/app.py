@@ -9,12 +9,24 @@ import tempfile
 import fitz  # PyMuPDF for PDF reading
 from gtts import gTTS
 from io import BytesIO
+from flask import request, jsonify
 
 # Load models
 whisper_model = whisper.load_model("base")
 qa_pipeline = pipeline("text2text-generation", model="google/flan-t5-small")
 
-# Flask app setup
+# receiving data from Raspberry Pi 
+@app.route("/update", methods=["POST"])
+def update_data():
+    data = request.get_json()
+    print("📡 Received data from cane:", data)
+
+    # Optional: store to database, trigger alerts, forward to frontend, etc.
+
+    return jsonify({"status": "received", "message": "Data processed"}), 200
+
+
+#  Flask app setup
 app = Flask(__name__, static_folder="static", template_folder="templates")
 CORS(app)
 
