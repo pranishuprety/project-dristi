@@ -1,41 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Dristi</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Cane - Project Dristi</title>
+
+  <!-- Flask-style static references -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Press+Start+2P&display=swap" rel="stylesheet" />
+
+  <!-- External Libraries -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgiT5dr8x6UjQ1wokQx7pAD8QwnCJUiHM&libraries=places&callback=initMap" async defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2.1.5/dist/tesseract.min.js"></script>
 </head>
-<body class="bg-gray-100">
-    <div class="container mx-auto px-4">
-        <header class="text-center py-8">
-            <h1 class="text-4xl font-bold">🦯 Project Dristi</h1>
-        </header>
-        <main class="text-center">
-            <p id="distance" class="text-xl"></p>
-            <p id="direction" class="text-xl"></p>
-            <div id="map" style="width: 100%; height: 400px;"></div>
+<body>
+  <div id="app">
+    <div class="logo-brand">iSight Cane</div>
+    <img src="{{ url_for('static', filename='hackprinceton.png') }}" alt="Hack Princeton" class="top-banner-image">
+    
+    <h1 class="main-title">🦯 Project Dristi</h1>
+    <marquee class="quote" scrollamount="6" scrolldelay="10">"Not all heroes have sight, but all have vision."</marquee>
 
-            
-         <button id="voiceButton">Start Voice Assistant</button>
-         <div id="voiceOutput"></div>
+    <!-- Image Reader -->
+    <button class="feature-card" onclick="document.getElementById('ocrInput').click()">
+      <i class='bx bx-camera'></i>
+      <span>Image Reader</span>
+    </button>
+    <input 
+      type="file" 
+      id="ocrInput" 
+      accept="image/*" 
+      capture="environment" 
+      style="display: none;" 
+      onchange="processImage(event)"
+    >
 
-            <div id="transcript" class="mt-4 p-4 border border-gray-300 rounded bg-white"></div>
-            <div id="response" class="mt-4 p-4 border border-gray-300 rounded bg-white"></div>
-        </main>
+    <!-- Voice Assistant UI -->
+    <section>
+      <h2>🎤 Voice Assistant</h2>
+      <button id="voiceButton">Ask Assistant</button>
+      <p id="voiceOutput">Press the button to ask.</p>
+    </section>
 
+    <!-- Compass -->
+    <section>
+      <h2>🎯 Voice-Guided Compass</h2>
+      <button onclick="speak('You are facing North toward Main Street')">Speak Direction</button>
+    </section>
 
+    <!-- Live Location Tracking -->
+    <section>
+      <h2>📍 Live Location Tracking</h2>
+      <div id="map" style="width: 100%; height: 300px;">Loading Map...</div>
+      <button onclick="getLocation()">Refresh Location</button>
+      <p><strong>Current Location:</strong> <span id="locationName"></span></p>
+    </section>
 
+    <!-- Weather -->
+    <section>
+      <h2>🌦 Weather & Navigation</h2>
+      <button onclick="speak('Rain expected. Avoid Elm Street.')">Check Weather</button>
+    </section>
 
-    </div>
+    <!-- Conversational Assistant -->
+    <section>
+      <h2>🗣️ Conversational Assistant</h2>
+      <button onclick="speakLocation()">Where am I?</button>
+      <button onclick="speak('Nearby: Pharmacy, Bus Stop, Park')">What’s nearby?</button>
+      <button onclick="speak('Cloudy, 56 degrees Fahrenheit')">How’s the weather?</button>
+    </section>
 
-    <script>
-        function initMap() {
-            // Placeholder for map initialization
-        }
-    </script>
-    <script src="/static/script.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgiT5dr8x6UjQ1wokQx7pAD8QwnCJUiHM&callback=initMap"
-    defer></script>
+    <!-- Hazard Alerts -->
+    <section>
+      <h2>⚠️ Hazard Alerts</h2>
+      <ul>
+        <li>🗣️ "Broken sidewalk on Elm Street"</li>
+        <li>🗣️ "Construction blocking walkway"</li>
+      </ul>
+      <button onclick="speak('Voice hazard report submitted.')">Submit Hazard Report</button>
+    </section>
+
+    <!-- Real-Time Data (Distance & Direction) -->
+    <section>
+      <h2>📡 Real-Time Navigation Info</h2>
+      <p id="distance">Distance: --</p>
+      <p id="direction">Direction: --</p>
+    </section>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
