@@ -3,6 +3,6 @@ gunicorn
 requests
 flask-cors
 transformers
-whisper
+openai-whisper
 PyMuPDF
 gTTS
