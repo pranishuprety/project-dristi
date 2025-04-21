@@ -1,41 +1,41 @@
-# 🦯 Project Dristi — Smart Cane & Assistive App for the Visually Impaired
+#  Project Dristi — Smart Cane & Assistive App for the Visually Impaired
 
 Hi, we are **Team Dristi**.  
 We created two powerful and independent tools that enhance safety, navigation, and communication for the visually impaired:
 
-- 🦯 **iSight Cane** – a smart Raspberry Pi-powered walking cane
-- 📱 **Dristi App** – a web-based assistive assistant built with Flask and React
+-  **iSight Cane** – a smart Raspberry Pi-powered walking cane
+-  **Dristi App** – a web-based assistive assistant built with Flask and React
 
 These systems **work independently** — but like an Apple Watch and iPhone, they **work even better together**.
 
 ---
 
-## 🦯 iSight Cane — Affordable Smart Navigation
+##  iSight Cane — Affordable Smart Navigation
 
 The **iSight Cane** is designed to reduce the cost of accessible technology:
 
-- 💸 **>90% cheaper** than commercial smart canes (under $100 vs. $1000+)
-- 🧠 **Built with Raspberry Pi 4**, ultrasonic sensor, buzzer, haptic motor
-- 🛑 Alerts the user with **vibration and sound** when an obstacle is detected within ~50cm
-- 🌍 Sends sensor data to the Dristi App if connected via WiFi
-- ⚡ Standalone functionality (no app required)
+-  **>90% cheaper** than commercial smart canes (under $100 vs. $1000+)
+-  **Built with Raspberry Pi 4**, ultrasonic sensor, buzzer, haptic motor
+-  Alerts the user with **vibration and sound** when an obstacle is detected within ~50cm
+-  Sends sensor data to the Dristi App if connected via WiFi
+-  Standalone functionality (no app required)
 
 ---
 
-## 🧠 Dristi App — Voice-Based Assistive Web App
+##  Dristi App — Voice-Based Assistive Web App
 
 The **Dristi App** is a fully functional assistive web tool built with:
 
-- 💻 **HTML, CSS, JavaScript** (frontend)  
-- 🐍 **Python + Flask** (backend)
+-  **HTML, CSS, JavaScript** (frontend)  
+-  **Python + Flask** (backend)
 
 Key Features:
-- 🗺️ Real-time **live location tracking**
-- 🧭 Voice-guided **compass navigation**
-- 🆘 Emergency **SOS alerts**
-- ☁️ **Weather and hazard** notifications
-- 🧠 Conversational **AI voice assistant**
-- 📄 Scene understanding via **image-to-text** and **PDF-to-speech**
+-  Real-time **live location tracking**
+-  Voice-guided **compass navigation**
+-  Emergency **SOS alerts**
+-  **Weather and hazard** notifications
+-  Conversational **AI voice assistant**
+-  Scene understanding via **image-to-text** and **PDF-to-speech**
 
 The app can work standalone — or receive real-time updates from the iSight Cane.
 
@@ -43,7 +43,7 @@ The app can work standalone — or receive real-time updates from the iSight Can
 
 ## 🔗 Live Demo
 
-🌐 [Backend Live on Render](https://project-dristi.onrender.com)
+ [Backend Live on Render](https://project-dristi.onrender.com)
 
 ---
 
@@ -56,7 +56,7 @@ The app can work standalone — or receive real-time updates from the iSight Can
 
 ---
 
-## 🤝 Team
+##  Team
 
 - Pranish Uprety  
 - Himal Gautam
@@ -65,7 +65,7 @@ The app can work standalone — or receive real-time updates from the iSight Can
 
 ---
 
-## 📦 How to Run (Local)
+##  How to Run (Local)
 
 ```bash
 git clone https://github.com/pranishuprety/project-dristi.git
